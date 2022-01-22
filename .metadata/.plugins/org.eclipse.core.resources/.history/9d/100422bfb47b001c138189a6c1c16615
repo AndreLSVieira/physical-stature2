@@ -1,8 +1,6 @@
 package util;
-
 import java.util.Scanner;
 import java.util.Locale;
-
 public class AndreLSVieira {
 
 	public static void main(String[] args) {
@@ -10,38 +8,39 @@ public class AndreLSVieira {
 		Locale.setDefault(Locale.US);
 		System.out.println("ENTER THE Nº OF PEOPLE TO BE MEAS. AND THE AGE RANGE REQUIRED: ");
 
-		int pip = an.nextInt();
-		int ag = an.nextInt();
-		int age = ag;
-
-		double[] vect = new double[pip];
+		int n = an.nextInt();
+		double ag = an.nextDouble();
+		int age = (int) ag;
+		
+		double[] vect = new double[n];
 		System.out.println("ARE YOU AT THE MINIMUM AGE TO PARTICIPATE IN THE SURVEY, (Y/N)? ");
 		char response = an.next().charAt(0);
-		if (response == 'y') {
-			System.out.println("ENTER THE NUMBER OF HEIGHTS TO BE MEASURED: ");
-
-			for (int i = 0; i < pip; i++) {
-
-				vect[i] = an.nextDouble();
-			}
-		} else {
+		if(response == 'y') {
+		System.out.println("ENTER THE NUMBER OF HEIGHTS TO BE MEASURED: ");
+	
+		
+		for (int i = 0; i < n; i++) {
+			
+			vect[i] = an.nextDouble();
+		}
+		}else {
 			System.out.println("ONLY PERSONS OVER THE AGE OF 18 ARE ALLOWED. ");
 		}
-
+	
 		double sum = 0.0;
-		for (int i = 0; i < pip; i++) {
+		for (int i = 0; i < n; i++) {
 			sum += vect[i];
 		}
-
-		double avg = sum / pip;
+		
+		double avg = sum / n;
 		if (avg < 1.00 && avg >= 0.43) {
 			System.out.printf("AGE: %d STATURE TOO LOW: %.2f\n", age, avg);
-		} else if (avg < 1.80 && avg > 0.50) {
+		} else if(avg < 1.80 && avg > 0.50){
 			System.out.printf("AGE: %d AVERAGE HEIGHT: %.2f%n", age, avg);
-		} else if (avg >= 1.80 && avg < 2.50) {
+		}else if(avg >= 1.80 && avg < 2.50) {
 			System.out.printf("AGE: %d VERY TALL STATURE: %.2f%n", age, avg);
-		} else {
-			System.out.println("THANK YOU FOR YOUR PARTICIPATION ");
+		}else {
+			System.out.println("FOR THIS AGE GROUP THIS STATURE IS NON-EXISTENT ");
 		}
 		an.close();
 

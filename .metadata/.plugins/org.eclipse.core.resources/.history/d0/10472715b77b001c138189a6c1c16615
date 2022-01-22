@@ -10,17 +10,17 @@ public class AndreLSVieira {
 		Locale.setDefault(Locale.US);
 		System.out.println("ENTER THE Nº OF PEOPLE TO BE MEAS. AND THE AGE RANGE REQUIRED: ");
 
-		int pip = an.nextInt();
+		int n = an.nextInt();
 		int ag = an.nextInt();
 		int age = ag;
 
-		double[] vect = new double[pip];
+		double[] vect = new double[n];
 		System.out.println("ARE YOU AT THE MINIMUM AGE TO PARTICIPATE IN THE SURVEY, (Y/N)? ");
 		char response = an.next().charAt(0);
 		if (response == 'y') {
 			System.out.println("ENTER THE NUMBER OF HEIGHTS TO BE MEASURED: ");
 
-			for (int i = 0; i < pip; i++) {
+			for (int i = 0; i < n; i++) {
 
 				vect[i] = an.nextDouble();
 			}
@@ -29,11 +29,11 @@ public class AndreLSVieira {
 		}
 
 		double sum = 0.0;
-		for (int i = 0; i < pip; i++) {
+		for (int i = 0; i < n; i++) {
 			sum += vect[i];
 		}
 
-		double avg = sum / pip;
+		double avg = sum / n;
 		if (avg < 1.00 && avg >= 0.43) {
 			System.out.printf("AGE: %d STATURE TOO LOW: %.2f\n", age, avg);
 		} else if (avg < 1.80 && avg > 0.50) {

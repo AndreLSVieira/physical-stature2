@@ -16,6 +16,7 @@ public class AndreLSVieira {
 
 		double[] vect = new double[pip];
 		System.out.println("ARE YOU AT THE MINIMUM AGE TO PARTICIPATE IN THE SURVEY, (Y/N)? ");
+		an.next();
 		char response = an.next().charAt(0);
 		if (response == 'y') {
 			System.out.println("ENTER THE NUMBER OF HEIGHTS TO BE MEASURED: ");
